@@ -19,14 +19,23 @@ This document contains the following details:
 
 ### Description of the Topology
 
-The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*10mn Vulnerable Web Application.
+The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly redundant, in addition to restricting traffic to the network.
-- The Load Balancer adds an additional layers of security from emerging threats such as DDoS attacks. It also authenticates users for access. In addition to the added layer of security provided by the Load Balancer, the Jump Box acts as a "bridge" between two trusted networks and is treated as a single entryway to a server group.
+
+- The Load Balancer adds an additional layers of security from emerging threats such as: 
+  - DDoS attacks
+  - Protection from emerging threats
+  - Authenticates users for access 
+  - Simplifies PCI compliance 
+In addition to the added layer of security provided by the Load Balancer, the Jump Box: 
+  - Acts as a "bridge" between two trusted networks and is treated as a single entryway to a server group
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the data and system logs.
-- Filebeat: Watches and records log files from locations specified and forwards them to Logstash for indexing.
-- Metricbeat: Is used to monitor and collect data such as system CPU and memory to load in a docker environment.
+- Filebeat: 
+  - Watches and records log files from locations specified and forwards them to Logstash for indexing.
+- Metricbeat: 
+  - Monitors and collects data such as system CPU and memory to load in a docker environment.
 
 The configuration details of each machine may be found below.
 
@@ -46,7 +55,7 @@ Only the Jump Box machine can accept connections from the Internet. Access to th
 - 154.6.26.7
 
 Machines within the network can only be accessed by the JumpBox Provisioner.
-- The JumpBox-Provisioner is the only machine I allowed access to the ELK Server. I used the private IP of the JumpBox-Provisioner to access the machines in the network
+- The JumpBox-Provisioner is the only machine I allowed access to the ELK Server. The private IP of the JumpBox-Provisioner is used to access the machines within the network
 - 10.0.0.4
 
 A summary of the access policies in place can be found in the table below.
@@ -61,7 +70,7 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it allows us to simplify complex tasks thus freeing up time and increases efficiency.
+Ansible is used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it allows us to simplify complex tasks thus freeing up time and increasing efficiency.
 
 
 The playbook implements the following tasks:
@@ -89,19 +98,25 @@ We have installed the following Beats on these machines:
 - Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- filebeats allows us to monitor the log files or locations that are specified to collect log events to be forwarded for indexing.
-- Metricbeats helps us monitor our servers metrics and statistics such as inbound and outbound traffic that can output such as Logstash._
+- Filebeats allows us to monitor the log files or locations that are specified to collect log events to be forwarded for indexing.
+- Metricbeats helps us monitor our servers metrics and statistics such as inbound and outbound traffic that can output such as Logstash.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the [filebeat-config](https://github.com/jvicious126/Elk-Stack/blob/4d0a4d312cedac783eb65a7a00166e4be088ddd7/Linux/filebeat-config.yml) file to /etc/ansible/.
-- Update the [hosts](https://github.com/jvicious126/Elk-Stack/blob/717a4758e79d1f5983b7856df83b9ea4c6e87d87/Ansible/hosts.yml) file to include the ELK-Server's IP address on line 1106 and 1806
-- Run the playbook [filebeat-playbook](https://github.com/jvicious126/Elk-Stack/blob/717a4758e79d1f5983b7856df83b9ea4c6e87d87/Ansible/filebeat.yml), and navigate to Kibana using the URL http://52.165.174.133:/app/kibana#/ ELK-Server public IP, specifying port '5601' to check that the installation worked as expected.
-- Copy the [metricbeat-config](https://github.com/jvicious126/Elk-Stack/blob/bfff4eccec3f2c8de9efe3c9ea5a8ed8236ff7ee/Linux/metricbeat-config.yml) file to /etc/ansible.
-- Update the metricbeat-config.yml file to include the Elk-Server's IP at line 62 and 95.
-- Run the playbook, [metricbeat-playbook](https://github.com/jvicious126/Elk-Stack/blob/bfff4eccec3f2c8de9efe3c9ea5a8ed8236ff7ee/Ansible/metricbeat-playbook.yml), and navigate to Kibana using the URL http://52.165.174.133:/app/kibana#/ ELK-Server public IP, specifying port '5601' to check that the installation worked as expected.
+
+- Copy the [filebeat-config.yml](https://github.com/jvicious126/Elk-Stack/blob/4d0a4d312cedac783eb65a7a00166e4be088ddd7/Linux/filebeat-config.yml) file to the /etc/ansible/ directory inside the ansible container.
+
+- Update the [filebeat-config.yml](https://github.com/jvicious126/Elk-Stack/blob/4d0a4d312cedac783eb65a7a00166e4be088ddd7/Linux/filebeat-config.yml) file to include the Elk Server's Private IP(10.1.0.4) on lines 1106 and 1806..
+
+- Run the playbook [filebeat.yml](https://github.com/jvicious126/Elk-Stack/blob/717a4758e79d1f5983b7856df83b9ea4c6e87d87/Ansible/filebeat.yml) located in the /etc/ansible/roles/ directory inside the ansible container, then navigate to Kibana using your web browser by inputing the URL http://52.165.174.133:/app/kibana#/ which would the ELK-Server public IP, specifying port '5601' to check that the installation worked as expected.
+
+- Copy the [metricbeat-config.yml](https://github.com/jvicious126/Elk-Stack/blob/bfff4eccec3f2c8de9efe3c9ea5a8ed8236ff7ee/Linux/metricbeat-config.yml) file to /etc/ansible/ directory inside the ansible container.
+
+- Update the [metricbeat-config.yml](https://github.com/jvicious126/Elk-Stack/blob/bfff4eccec3f2c8de9efe3c9ea5a8ed8236ff7ee/Linux/metricbeat-config.yml) file in the /etc/ansible/ to include the Elk-Server's private IP on lines 62 and 95.
+
+- Run the playbook, [metricbeat-playbook.yml](https://github.com/jvicious126/Elk-Stack/blob/bfff4eccec3f2c8de9efe3c9ea5a8ed8236ff7ee/Ansible/metricbeat-playbook.yml) inside the /etc/ansible/roles directory, and navigate to Kibana on your web browser using the URL http://52.165.174.133:/app/kibana#/ ELK-Server public IP, specifying port '5601' to check that the installation worked as expected.
 
 
 _TODO: Answer the following questions to fill in the blanks:_
