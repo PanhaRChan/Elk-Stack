@@ -97,11 +97,11 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 - Copy the [filebeat-config](https://github.com/jvicious126/Elk-Stack/blob/4d0a4d312cedac783eb65a7a00166e4be088ddd7/Linux/filebeat-config.yml) file to /etc/ansible/.
-- Update the [hosts.yml](https://github.com/jvicious126/Elk-Stack/blob/717a4758e79d1f5983b7856df83b9ea4c6e87d87/Ansible/hosts.yml) file to include the ELK-Server's IP address on line 1106 and 1806
-- Run the playbook [filebeat.yml](https://github.com/jvicious126/Elk-Stack/blob/717a4758e79d1f5983b7856df83b9ea4c6e87d87/Ansible/filebeat.yml), and navigate to Kibana using the URL http://52.165.174.133:/app/kibana#/ ELK-Server public IP, specifying port '5601' to check that the installation worked as expected.
-- Copy the [Linux/metricbeat-config.yml](https://github.com/jvicious126/Elk-Stack/blob/806db5647e93235330db334704a0fcf6d97c51ef/Linux/metricbeat-config.yml) file to /etc/ansible.
+- Update the [hosts](https://github.com/jvicious126/Elk-Stack/blob/717a4758e79d1f5983b7856df83b9ea4c6e87d87/Ansible/hosts.yml) file to include the ELK-Server's IP address on line 1106 and 1806
+- Run the playbook [filebeat-playbook](https://github.com/jvicious126/Elk-Stack/blob/717a4758e79d1f5983b7856df83b9ea4c6e87d87/Ansible/filebeat.yml), and navigate to Kibana using the URL http://52.165.174.133:/app/kibana#/ ELK-Server public IP, specifying port '5601' to check that the installation worked as expected.
+- Copy the [metricbeat-config](https://github.com/jvicious126/Elk-Stack/blob/bfff4eccec3f2c8de9efe3c9ea5a8ed8236ff7ee/Linux/metricbeat-config.yml) file to /etc/ansible.
 - Update the metricbeat-config.yml file to include the Elk-Server's IP at line 62 and 95.
-- Run the playbook, [Ansible/metricbeat-playbook.yml](https://github.com/jvicious126/Elk-Stack/blob/806db5647e93235330db334704a0fcf6d97c51ef/Ansible/metricbeat-playbook.yml), and navigate to Kibana using the URL http://52.165.174.133:/app/kibana#/ ELK-Server public IP, specifying port '5601' to check that the installation worked as expected.
+- Run the playbook, [metricbeat-playbook](https://github.com/jvicious126/Elk-Stack/blob/bfff4eccec3f2c8de9efe3c9ea5a8ed8236ff7ee/Ansible/metricbeat-playbook.yml), and navigate to Kibana using the URL http://52.165.174.133:/app/kibana#/ ELK-Server public IP, specifying port '5601' to check that the installation worked as expected.
 
 
 _TODO: Answer the following questions to fill in the blanks:_
