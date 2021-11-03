@@ -41,11 +41,11 @@ The configuration details of each machine may be found below.
 
 | Name      | Function | IP Address                | Operating System |
 |-----------|----------|---------------------------|------------------|
-| Jump Box  | Gateway  | 52.150.26.39/10.0.0.4     | Linux            |
+| Jump Box  | Gateway  | 52.150.26.39 / 10.0.0.4   | Linux            |
 | Web-1     | WebVM    | 10.0.0.7                  | Linux            |
 | Web-2     | WebVM    | 10.0.0.6                  | Linux            |
 | Web-3     | WebVM    | 10.0.0.9                  | Linux            |
-| ELK-Server| ELK-Stack| 52.165.174.133/10.1.0.4   | Linux            |
+| ELK-Server| ELK-Stack| 52.165.174.133 / 10.1.0.4 | Linux            |
 
 ### Access Policies
 
