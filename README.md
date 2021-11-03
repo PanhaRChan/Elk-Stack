@@ -106,14 +106,14 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 
-- nano into the file located in /etc/ansible/hosts to edit the file in order for the playbooks to run on the specified machines. There you are going to locate #[webservers], when you do you are going to update it by entering the Web VM's IP addresses as follows: 
-- 10.0.0.6 ansible_python_interpreter=/usr/bin/python3 
+- nano into /etc/ansible/hosts to edit the [hosts](https://github.com/jvicious126/Elk-Stack/blob/bde2b8c4c3b261cf118012c61a03f606225a71fe/Ansible/hosts.yml) file in order for the playbooks to run on the specified machines. There you are going to locate #[webservers], when you do you are going to update it by entering the Web VM's IP addresses as follows: 
+- 10.0.0.6 ansible_python_interpreter=/usr/bin/python3'
 - 10.0.0.7 ansible_python_interpreter=/usr/bin/python3
 - 10.0.0.9 ansible_python_interpreter=/usr/bin/python3 
-- ansible_python_interpreter=/usr/bin/python3 specifies the container that that will be running
+- 'ansible_python_interpreter=/usr/bin/python3' specifies the container that that will be running
 - Make sure to un-comment [webservers]. 
 
-- Next you will create a new group called '[elk]' under '[webservers]', update that section by entering the ELK-Server's private IP aas follows: 
+- Next you will create a new group called '[elk]' underneath '[webservers]', update that section by entering the ELK-Server's private IP as follows: 
 - 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
   
 - Copy the [filebeat-config.yml](https://github.com/jvicious126/Elk-Stack/blob/4d0a4d312cedac783eb65a7a00166e4be088ddd7/Linux/filebeat-config.yml) file to the /etc/ansible/ directory inside the ansible container.
