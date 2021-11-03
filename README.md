@@ -29,7 +29,6 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 - Metricbeat: Is used to monitor and collect data such as system CPU and memory to load in a docker environment.
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name      | Function | IP Address                | Operating System |
 |-----------|----------|---------------------------|------------------|
@@ -90,14 +89,14 @@ We have installed the following Beats on these machines:
 - Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- Logbeats allows us to monitor the log files or locations that are specified to collect log events to be forwarded for indexing.
+- filebeats allows us to monitor the log files or locations that are specified to collect log events to be forwarded for indexing.
 - Metricbeats helps us monitor our servers metrics and statistics such as inbound and outbound traffic that can output such as Logstash._
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the [Linux/filebeat-config.yml](https://github.com/jvicious126/Elk-Stack/blob/806db5647e93235330db334704a0fcf6d97c51ef/Linux/filebeat-config.yml) file to /etc/ansible/.
+- Copy the [filebeat-config.yml](https://github.com/jvicious126/Elk-Stack/blob/806db5647e93235330db334704a0fcf6d97c51ef/Linux/filebeat-config.yml) file to /etc/ansible/.
 - Update the [Ansible/hosts.yml](https://github.com/jvicious126/Elk-Stack/blob/806db5647e93235330db334704a0fcf6d97c51ef/Ansible/hosts.yml) file to include the ELK-Server's IP address on line 1106 and 1806
 - Run the playbook [Ansible/filebeat.yml](https://github.com/jvicious126/Elk-Stack/blob/806db5647e93235330db334704a0fcf6d97c51ef/Ansible/filebeat.yml), and navigate to Kibana using the URL http://52.165.174.133:/app/kibana#/ ELK-Server public IP, specifying port '5601' to check that the installation worked as expected.
 - Copy the [Linux/metricbeat-config.yml](https://github.com/jvicious126/Elk-Stack/blob/806db5647e93235330db334704a0fcf6d97c51ef/Linux/metricbeat-config.yml) file to /etc/ansible.
