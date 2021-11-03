@@ -1,0 +1,24 @@
+###Instructions
+
+###Filebeat
+
+- Run 'curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > /etc/ansible/filebeat-config.yml' to download the filebeat-config.yml file.
+- Edit the file by running 'nano filebeat-config.yml'
+- Add the internal IP of the Elk-Server and specify port 5601.
+- Create the playbook by running 'nano filebeat-playbook.yml' and write the following script;
+
+From within the same directory, run the playbook with the following command; 'ansible-playbook filebeat.playbook.yml'
+
+Navigate to http://104.43.249.22:5601 to ensure the playbook ran correctly and is working.
+
+###Metricbeat
+
+- Run 'curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat > /etc/ansible/filebeat-config.yml' to download the filebeat-config.yml file.
+- Edit the file by running 'nano metricbeat-config.yml'
+- Add the internal IP of the Elk-Server and specify port 5601.
+- Create the playbook by running 'nano metricbeat-playbook.yml' and write the following script;
+
+
+From within the same directory, run the playbook with the following command; 'ansible-playbook filebeat.playbook.yml'
+
+Navigate to http://104.43.249.22:5601 to ensure the playbook ran correctly and is working.
