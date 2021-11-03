@@ -112,7 +112,6 @@ SSH into the control node and follow the steps below:
 
 - Run the playbook [filebeat.yml](https://github.com/jvicious126/Elk-Stack/blob/717a4758e79d1f5983b7856df83b9ea4c6e87d87/Ansible/filebeat.yml) located in the /etc/ansible/roles/ directory inside the ansible container, then navigate to Kibana using your web browser by inputing the URL http://52.165.174.133:/app/kibana#/ which would the ELK-Server public IP, specifying port '5601' to check that the installation worked as expected.
 
-[filebeat.png](https://github.com/jvicious126/Elk-Stack/blob/aabd29369f4711e06c771261f8adcb71835ef6e8/Images/filebeat.png)
 
 - Copy the [metricbeat-config.yml](https://github.com/jvicious126/Elk-Stack/blob/bfff4eccec3f2c8de9efe3c9ea5a8ed8236ff7ee/Linux/metricbeat-config.yml) file to /etc/ansible/ directory inside the ansible container.
 
@@ -120,7 +119,21 @@ SSH into the control node and follow the steps below:
 
 - Run the playbook, [metricbeat-playbook.yml](https://github.com/jvicious126/Elk-Stack/blob/bfff4eccec3f2c8de9efe3c9ea5a8ed8236ff7ee/Ansible/metricbeat-playbook.yml) inside the /etc/ansible/roles directory, and navigate to Kibana on your web browser using the URL http://52.165.174.133:/app/kibana#/ ELK-Server public IP, specifying port '5601' to check that the installation worked as expected.
 
+[kibana.png](https://github.com/jvicious126/Elk-Stack/blob/cb3d830abfccebe4c3796415fb494425ccae6b56/Images/Kibana.png)
+
+[filebeat.png](https://github.com/jvicious126/Elk-Stack/blob/aabd29369f4711e06c771261f8adcb71835ef6e8/Images/filebeat.png)
+
 [metricbeat.png](https://github.com/jvicious126/Elk-Stack/blob/5dcf97f0783f98b5b03b39474fe6fede9e963e86/Images/metricbeat%20.png)
+
+
+
+
+
+
+
+
+
+
 
 _TODO: Answer the following questions to fill in the blanks:_
 - _Which file is the playbook? Where do you copy it?_
