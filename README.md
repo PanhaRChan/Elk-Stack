@@ -110,7 +110,7 @@ SSH into the control node and follow the steps below:
 - 10.0.0.6 ansible_python_interpreter=/usr/bin/python3'
 - 10.0.0.7 ansible_python_interpreter=/usr/bin/python3
 - 10.0.0.9 ansible_python_interpreter=/usr/bin/python3 
-- 'ansible_python_interpreter=/usr/bin/python3' specifies the container that that will be running
+- 'ansible_python_interpreter=/usr/bin/python3' specifies the container that it will be running
 - Make sure to un-comment [webservers]. 
 
 - Next you will create a new group called '[elk]' underneath '[webservers]', update that section by entering the ELK-Server's private IP as follows: 
