@@ -106,9 +106,24 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 
+- nano into the file located in /etc/ansible/hosts to edit the file in order for the playbooks to run on the specified machines. There you are going to locate #[webservers], when you do you are going to update it by entering the Web VM's IP addresses as follows: 
+- 10.0.0.6 ansible_python_interpreter=/usr/bin/python3 
+- 10.0.0.7 ansible_python_interpreter=/usr/bin/python3
+- 10.0.0.9 ansible_python_interpreter=/usr/bin/python3. 
+
+- Make sure you un-comment [webservers]. 
+
+- Next you will create a new group called '[elk]' under '[webservers]', update that section by entering the ELK-Server's private IP aas follows: 
+- 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
+  
 - Copy the [filebeat-config.yml](https://github.com/jvicious126/Elk-Stack/blob/4d0a4d312cedac783eb65a7a00166e4be088ddd7/Linux/filebeat-config.yml) file to the /etc/ansible/ directory inside the ansible container.
 
-- Update the [filebeat-config.yml](https://github.com/jvicious126/Elk-Stack/blob/4d0a4d312cedac783eb65a7a00166e4be088ddd7/Linux/filebeat-config.yml) file to include the Elk Server's Private IP(10.1.0.4) on lines 1106 and 1806..
+- Update the [filebeat-config.yml](https://github.com/jvicious126/Elk-Stack/blob/4d0a4d312cedac783eb65a7a00166e4be088ddd7/Linux/filebeat-config.yml) file to include the Elk Server's Private IP on line 1105 as follows:
+- 'hosts: ["10.1.0.4:9200"]' 
+
+and line 1806 as follows:
+
+- 'host: "10.1.0.4:5601"'
 
 - Run the playbook [filebeat.yml](https://github.com/jvicious126/Elk-Stack/blob/717a4758e79d1f5983b7856df83b9ea4c6e87d87/Ansible/filebeat.yml) located in the /etc/ansible/roles/ directory inside the ansible container, then navigate to Kibana using your web browser by inputing the URL http://52.165.174.133:/app/kibana#/ which would the ELK-Server public IP, specifying port '5601' to check that the installation worked as expected.
 
