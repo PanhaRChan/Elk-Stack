@@ -2,11 +2,11 @@
 
 The files in this repository were used to configure the network depicted below.
 
-[Images/ELK-STACK-PROJECT.drawio.png](https://github.com/jvicious126/Elk-Stack-/blob/fa48380fcd283f5852e5e17531acb8569f39d781/Images/ELK-STACK-PROJECT.drawio.png)
+[ELK-STACK-PROJECT](https://github.com/jvicious126/Elk-Stack-/blob/fa48380fcd283f5852e5e17531acb8569f39d781/Images/ELK-STACK-PROJECT.drawio.png)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the playbook file may be used to install only certain pieces of it, such as Filebeat.
 
-  - [Ansible/install-elk.yml](https://github.com/jvicious126/Elk-Stack-/blob/92121ca71bf1212a3f5508761f133ed2fc0eac34/Ansible/install-elk.yml)
+  - [install-elk](https://github.com/jvicious126/Elk-Stack/blob/a70b388802344eb585b5054ae3b9e15065c177e2/Ansible/install-elk.yml)
 
 This document contains the following details:
 - Description of the Topology
