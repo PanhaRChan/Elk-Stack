@@ -74,12 +74,19 @@ Ansible is used to automate configuration of the ELK machine. No configuration w
 
 
 The playbook implements the following tasks:
+
 -Install Docker.io
+
 -Install Python3-pip
+
 -Install Docker module
+
 -Increase virtual memory
+
 -Use more memory
+
 -Download and launch a docker elk container
+
 -Enable service docker on boot
 
 
@@ -106,8 +113,8 @@ In order to use the playbook, you will need to have an Ansible control node alre
 
 SSH into the control node and follow the steps below:
 
-- nano into /etc/ansible/hosts to edit the [hosts](https://github.com/jvicious126/Elk-Stack/blob/bde2b8c4c3b261cf118012c61a03f606225a71fe/Ansible/hosts.yml) file in order for the playbooks to run on the specified machines. There you are going to locate #[webservers], when you do you are going to update it by entering the Web VM's IP addresses as follows: 
-- 10.0.0.6 ansible_python_interpreter=/usr/bin/python3'
+- nano into /etc/ansible/hosts to edit the [hosts](https://github.com/jvicious126/Elk-Stack/blob/bde2b8c4c3b261cf118012c61a03f606225a71fe/Ansible/hosts.yml) file in order for the playbooks to run on the specified machines. There you are going to locate #[webservers], update it by entering the Web VM's IP addresses as follows: 
+- 10.0.0.6 ansible_python_interpreter=/usr/bin/python3
 - 10.0.0.7 ansible_python_interpreter=/usr/bin/python3
 - 10.0.0.9 ansible_python_interpreter=/usr/bin/python3 
 - 'ansible_python_interpreter=/usr/bin/python3' specifies the container that it will be running
@@ -122,7 +129,7 @@ SSH into the control node and follow the steps below:
 - line 1105 'hosts: ["10.1.0.4:9200"]' 
 - line 1806 'host: "10.1.0.4:5601"'
 
-- Run the playbook [filebeat.yml](https://github.com/jvicious126/Elk-Stack/blob/717a4758e79d1f5983b7856df83b9ea4c6e87d87/Ansible/filebeat.yml) located in the /etc/ansible/roles/ directory inside the ansible container, then navigate to Kibana using your web browser by inputing the URL http://52.165.174.133:/app/kibana#/ which would be the ELK-Server public IP, specifying port '5601' to check that the installation worked as expected.
+- Run the playbook [filebeat.yml](https://github.com/jvicious126/Elk-Stack/blob/717a4758e79d1f5983b7856df83b9ea4c6e87d87/Ansible/filebeat.yml) located in the /etc/ansible/roles/ directory inside the ansible container, then navigate to Kibana using your web browser by inputing the URL http://52.165.174.133:/app/kibana which would be the ELK-Server public IP, specifying port '5601' to check that the installation worked as expected.
 
 
 - Copy the [metricbeat-config.yml](https://github.com/jvicious126/Elk-Stack/blob/bfff4eccec3f2c8de9efe3c9ea5a8ed8236ff7ee/Linux/metricbeat-config.yml) file to /etc/ansible/ directory inside the ansible container.
@@ -131,7 +138,7 @@ SSH into the control node and follow the steps below:
 - line 62 'host: "10.1.0.4:5601"'
 - line 95 'hosts: ["10.1.0.4:9200"]'
 
-- Run the playbook, [metricbeat-playbook.yml](https://github.com/jvicious126/Elk-Stack/blob/bfff4eccec3f2c8de9efe3c9ea5a8ed8236ff7ee/Ansible/metricbeat-playbook.yml) inside the /etc/ansible/roles directory, and navigate to Kibana on your web browser using the URL http://52.165.174.133:/app/kibana#/ ELK-Server public IP, specifying port '5601' to check that the installation worked as expected.
+- Run the playbook, [metricbeat-playbook.yml](https://github.com/jvicious126/Elk-Stack/blob/bfff4eccec3f2c8de9efe3c9ea5a8ed8236ff7ee/Ansible/metricbeat-playbook.yml) inside the /etc/ansible/roles directory, and navigate to Kibana on your web browser using the URL http://52.165.174.133:/app/kibana ELK-Server public IP, specifying port '5601' to check that the installation worked as expected.
 
 [kibana.png](https://github.com/jvicious126/Elk-Stack/blob/cb3d830abfccebe4c3796415fb494425ccae6b56/Images/Kibana.png)
 
