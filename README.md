@@ -87,7 +87,7 @@ The playbook implements the following tasks:
 
 -Download and launch a docker elk container
 
--Enable service docker on boot
+-Enable service docker on boot.
 
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
