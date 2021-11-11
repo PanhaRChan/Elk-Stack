@@ -75,19 +75,19 @@ Ansible is used to automate configuration of the ELK machine. No configuration w
 
 The playbook implements the following tasks:
 
--Install Docker.io
+- Install Docker.io
 
--Install Python3-pip
+- Install Python3-pip
 
--Install Docker module
+- Install Docker module
 
--Increase virtual memory
+- Increase virtual memory
 
--Use more memory
+- Use more memory
 
--Download and launch a docker elk container
+- Download and launch a docker elk container
 
--Enable service docker on boot
+- Enable service docker on boot
 
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
